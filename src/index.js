@@ -28,10 +28,10 @@ function gettingMovies() {
 
       //Input json data in html
       html += `
-        <div class="col-sm-6 col-3-md movies" style="background-image: url(../${img})">
+        <div class="col-sm-6 col-3-md movies view zoom p-0" data-toggle="modal" data-target="#exampleModalCenter">
+        <img src="../${img}" alt="" style="max-width: 100%; height: auto" class="m-0 p-0">
         </div>`;
-      // console.log(titles);
-      // console.log(`${title}`);
+
       //Input option selectors
       options += `
         <!--<option value="0" disabled selected>Select Product</option>-->
