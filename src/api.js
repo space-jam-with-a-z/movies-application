@@ -22,6 +22,18 @@ const addMovie = (title, rating, genre, img) => {
 
 };
 
+const deletingMovie = id => {
+  const url = '/api/movies';
+  const options = {
+    method: 'DELETE',
+  };
+  fetch(url + "/" + id, options)
+      .then(() => "A movie was deleted.")
+      .catch(() => "A movie wasn't deleted.");
+};
+
+
 export default {
   addMovie,
-  getMovies};
+  getMovies,
+  deletingMovie};

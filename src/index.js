@@ -155,10 +155,13 @@ $("#add").on("click", function(){
 });
 
 // Delete button function
-$("#delete").on("click", function(){
-
-  let deleteTitle = prompt("What is the title of the movie you want to delete?");
-
-  alert(`The movie being deleted is \"${deleteTitle}\".`);
-
+$(`#delete`).on("click", function () {
+  let deleteID = prompt("Please enter the ID of the movie you want to delete.");
+  movies.deletingMovie(deleteID);
+  $(".container").html("<p id='image'><img src='https://i.gifer.com/SjyG.gif' alt='loading'></p>");
+  $('button').toggleClass("hide");
+  $('input').toggleClass("hide");
+  $('h1').toggleClass("hide");
+  $('h3').toggleClass("hide");
+  gettingMovies();
 });
