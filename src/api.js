@@ -5,9 +5,9 @@ const getMovies = () => {
 };
 // };
 
-const addMovie = (title, rating, genre) => {
+const addMovie = (title, rating, genre, img) => {
 
-  const newMovie = {title: title, genre: genre, rating: rating, id: "x"};
+  const newMovie = {title: title, rating: rating, genre: genre, img: 'img/default.jpg'};
   const url = '/api/movies';
   const options = {
     method: 'POST',
@@ -22,6 +22,18 @@ const addMovie = (title, rating, genre) => {
 
 };
 
+const deletingMovie = id => {
+  const url = '/api/movies';
+  const options = {
+    method: 'DELETE',
+  };
+  fetch(url + "/" + id, options)
+      .then(() => "A movie was deleted.")
+      .catch(() => "A movie wasn't deleted.");
+};
+
+
 export default {
   addMovie,
-  getMovies};
+  getMovies,
+  deletingMovie};
