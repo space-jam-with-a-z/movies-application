@@ -139,24 +139,6 @@
       "genre": "thriller",
       "id": 20,
       "img": "img/us.jpg"
-    },
-    {
-      "title": "",
-      "rating": "",
-      "img": "img/default.jpg",
-      "id": 21
-    },
-    {
-      "title": "",
-      "rating": "",
-      "img": "img/default.jpg",
-      "id": 22
-    },
-    {
-      "title": "",
-      "rating": "",
-      "img": "img/default.jpg",
-      "id": 23
     }
   ]
 }
