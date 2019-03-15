@@ -12,28 +12,35 @@ let imgs;
 // Fetch movie data from db.json and insert movie tiles //
 function gettingMovies() {
   movies.getMovies().then((movies) => {
-    console.log('Here are all the movies:');
 
     $('button').toggleClass("hide");
     $('h1').toggleClass("hide");
     $('h3').toggleClass("hide");
 
     let html = `<div class="row">`;
+    let options = `<options id="product-select" class="form-control custom-select">`;
     movies.forEach(({title, rating, id, img, genre}) => {
+      // Attach values to declarations
       ratings = `${rating}`;
       titles = `${title}`;
       genres = `${genre}`;
       imgs = `${img}`;
-      // console.log(`${rating}`);
+
+      //Input json data in html
       html += `
-      <div class="col-sm-6 col-3-md movies" style="background-image: url(../${img})">
-        <p>id#${id}</p>
-        <p>${title}</p>
-        <p>${genre}</p>
-        <p>rating:${rating}</p>
-      </div>`;
+        <div class="col-sm-6 col-3-md movies" style="background-image: url(../${img})">
+        </div>`;
+      // console.log(titles);
+      // console.log(`${title}`);
+      //Input option selectors
+      options += `
+        <!--<option value="0" disabled selected>Select Product</option>-->
+        <option value=${title}>${title}</option>
+`
+
     });
-    $(".inject-movies").html(html + "</div>");
+    $(".inject-movies").html(html);
+    $(".inject-options").html(options);
   })
     .catch((error) => {
       console.warn('Inject moves went wrong.');
@@ -63,9 +70,7 @@ productSelect.addEventListener('change', (e) => {
 
 // Rating control change
 ratingControl.addEventListener('blur', (e) => {
-  // rating = e.target.value;
-  // const rating = `${rating}`
-
+  // ratings = e.target.value;
 
   // Make sure 5 or under
   if(ratings > 5) {
@@ -83,6 +88,7 @@ ratingControl.addEventListener('blur', (e) => {
 const starsTotal = 5;
 
 // Get ratings // in loop for objects, of loop for array
+// console.log(ratings);
 function getRatings() {
   for(let rating in ratings) {
 
@@ -100,24 +106,26 @@ function getRatings() {
     document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
   }
 }
+
 // Ratings object
 function gettingRatings() {
   movies.getMovies().then((movies) => {
     let ratingTable = `<table class="table table-striped">`;
     movies.forEach(({title}) => {
       ratingTable += `
-              <tbody>
-                  <tr class="aladdin">
-                      <td>${title}</td>
-                      <td>
-              <div class='stars-outer'>
-                  <div class="stars-inner"></div>
-              </div>
-              <span class="number-rating"></span>
-                      </td>
-                  </tr>
-                  <tr class="movies-table"></tr>
-              </tbody></table></div>`
+        <table>
+          <tbody>
+              <tr>
+                  <td class="pr-2">${title}</td>
+                  <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner"></div>
+                    </div>
+                    <span class="number-rating"></span>
+                  </td>
+              </tr>
+          </tbody>
+        </table>`
     });
     $(".movies-table").append(ratingTable);
   })
@@ -139,9 +147,7 @@ $("#add").on("click", function(){
   let addTitle = $('#inputTitle').val();
   let addGenre = $('#inputGenre').val();
   let addRating = $('#inputRating').val();
-  let addFile = $('#inputImg').val();
-
-  console.warn(`The movie being added is:\n\nTitle: ${addTitle}\nGenre: ${addGenre}\nRating: ${addRating}`);
+  // let addFile = $('#inputImg').val();
 
   movies.addMovie(addTitle, addGenre, addRating);
 
