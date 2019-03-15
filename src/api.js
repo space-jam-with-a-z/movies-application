@@ -5,9 +5,9 @@ const getMovies = () => {
 };
 // };
 
-const addMovie = (title, rating, genre) => {
+const addMovie = (title, rating, genre, img) => {
 
-  const newMovie = {title: title, genre: genre, rating: rating, id: "x"};
+  const newMovie = {title: title, rating: rating, genre: genre, img: 'img/default.jpg'};
   const url = '/api/movies';
   const options = {
     method: 'POST',
