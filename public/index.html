@@ -9,31 +9,32 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="hide">SPACE JAM with a Z</h1>
-    <h3 class="hide">MOVIES</h3>
+    <header class="">
+        <h1 class="hide display-3 text-danger">SPACE JAM with a Z</h1>
+        <h3 class="hide display-5 text-danger">MOVIES APP</h3>
+    </header>
 
-    <button class="hide" id="add">ADD</button>
-    <button class="hide" id="delete">DELETE</button>
+    <!-- Form -->
+    <form>
+        <div class="form-group">
 
-    <input type="text" id="inputTitle" placeholder="Enter Title...">
-    <input type="text" id="inputGenre" placeholder="Enter Genre...">
-    <input type="file" id="inputImg" name="inputImg">
+            <!-- Input boxes for add button -->
+            <input type="text" id="inputTitle" class="form-control my-3" placeholder="Enter Title...">
+            <input type="text" id="inputGenre" class="form-control my-3" placeholder="Enter Genre...">
+            <input type="file" id="inputImg" class="form-control-file mt-3" name="inputImg">
 
-    <!-- Form for select movie // * Not needed? * // -->
-    <div class="form-group">
-        <select id="product-select" class="form-control custom-select">
-            <option value="0" disabled selected>Select Product</option>
-            <option value="aladdin">Aladdin</option>
-        </select>
-    </div>
+            <select id="product-select" class="form-control custom-select inject-options my-3"></select>
 
-    <!-- Form for rating control -->
-    <div class="form-group">
-        <input type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1 - 5" disabled>
-    </div>
+            <input type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1 - 5" disabled>
 
-    <!-- Add movie ratings table class -->
-    <div class="form-group movies-table"></div>
+            <!-- Add/Delete Buttons -->
+            <button class="hide btn btn-secondary mt-3" id="add">ADD</button>
+            <button class="hide btn btn-primary mt-3" id="delete">DELETE</button>
+        </div>
+
+        <!-- Add movie ratings table class -->
+        <div class="form-group movies-table"></div>
+    </form>
 
     <!-- Content imported from container class // Loading image displays until completed -->
     <div class="inject-movies">
