@@ -1,26 +1,41 @@
 * {
+
     margin: 0;
     padding: 0;
+
 }
 
 html, body {
+
     background-color: rgb(32,30,30);
     color: white;
     text-align: center;
+
 }
 .movies{
+
     background-color: grey;
     max-height: 350px;
     min-height: 350px;
     max-width: 250px;
     min-width: 250px;
-    margin: 25px 10px 5px 10px;
+    margin: 25px 15px 5px 15px;
 
 }
 .container {
+
     width: 100%;
     text-align: center;
+
 }
 button {
-    margin: 10px;
+
+    height: 30px;
+    width: 120px;
+    margin-top: 25px;
+    margin-left: 10px;
+
+}
+.hide{
+    visibility: hidden;
 }
