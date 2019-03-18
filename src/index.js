@@ -1,173 +1,97 @@
-/**
- * es6 modules and imports
- */
+// (function() {
+"use strict";
 import movies from './api.js';
 
-// Declarations
-let ratings;
-let titles;
-let genres;
-let imgs;
 
-// Fetch movie data from db.json and insert movie tiles //
-function gettingMovies() {
-  movies.getMovies().then((movies) => {
-
-    $('button').toggleClass("hide");
-    $('h1').toggleClass("hide");
-    $('h3').toggleClass("hide");
-
-    let html = `<div class="row">`;
-    let options = `<options id="product-select" class="form-control custom-select">`;
-    movies.forEach(({title, rating, id, img, genre}) => {
-      // Attach values to declarations
-      ratings = `${rating}`;
-      titles = `${title}`;
-      genres = `${genre}`;
-      imgs = `${img}`;
-
-      //Input json data in html
-      html += `
-        <div class="col-sm-6 col-3-md movies view zoom p-0" data-toggle="modal" data-target="#exampleModalCenter">
-        <img src="../${img}" alt="" style="max-width: 100%; height: auto" class="m-0 p-0">
-        </div>`;
-
-      //Input option selectors
-      options += `
-        <!--<option value="0" disabled selected>Select Product</option>-->
-        <option value=${title}>${title}</option>
-`
-
-    });
-    $(".inject-movies").html(html);
-    $(".inject-options").html(options);
-  })
-    .catch((error) => {
-      console.warn('Inject moves went wrong.');
-      console.log(error);
-    });
-}
-
-///////////////////////// Rating Code ///////////////////////////
-
-// Run get ratings when DOM loads
-document.addEventListener('DOMContentLoaded', getRatings);
-
-// Form Elements
-const productSelect = document.getElementById('product-select');
-const ratingControl = document.getElementById('rating-control');
-
-// Init product
-let product;
-
-// Product select change
-productSelect.addEventListener('change', (e) => {
-  product = e.target.value;
-  // Enable rating control
-  ratingControl.disabled = false;
-  ratingControl.value = ratings[product];
-});
-
-// Rating control change
-ratingControl.addEventListener('blur', (e) => {
-  // ratings = e.target.value;
-
-  // Make sure 5 or under
-  if(ratings > 5) {
-    alert('Please rate 1-5');
-    return;
-  }
-
-  // Change rating
-  ratings[product] = ratings;
-
-  getRatings();
-});
-
-// Total Stars
-const starsTotal = 5;
-
-// Get ratings // in loop for objects, of loop for array
-// console.log(ratings);
-function getRatings() {
-  for(let rating in ratings) {
-
-    console.log(ratings[rating]);
-
-    const starPercentage = (ratings[rating] / starsTotal) * 100;
-
-    // Round to nearest 10
-    const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
-
-    // Set width of stars-inner to percentage
-    document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
-
-    // Add number rating
-    document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
-  }
-}
-
-// Ratings object
-function gettingRatings() {
-  movies.getMovies().then((movies) => {
-    let ratingTable = `<table class="table table-striped">`;
-    movies.forEach(({title}) => {
-      ratingTable += `
-        <table>
-          <tbody>
-              <tr>
-                  <td class="pr-2">${title}</td>
-                  <td>
-                    <div class="stars-outer">
-                        <div class="stars-inner"></div>
-                    </div>
-                    <span class="number-rating"></span>
-                  </td>
-              </tr>
-          </tbody>
-        </table>`
-    });
-    $(".movies-table").append(ratingTable);
-  })
-    .catch((error) => {
-      console.warn('Ratings went wrong.');
-      console.log(error);
-    });
-}
-
-/////////////////////// End Ratings Code /////////////////////
-
-// Call functions
-gettingRatings();
-gettingMovies();
-
-// Add button function
-$("#add").on("click", function(){
-
-  let addTitle = $('#inputTitle').val();
-  let addGenre = $('#inputGenre').val();
-  let addRating = $('#inputRating').val();
-  // let addFile = $('#inputImg').val();
-
-  movies.addMovie(addTitle, addGenre, addRating);
-
-  $(".container").html("<p id='image'><img src='https://i.gifer.com/SjyG.gif' alt='loading'></p>");
-  $('button').toggleClass("hide");
-  $('h1').toggleClass("hide");
-  $('h3').toggleClass("hide");
-
-  gettingMovies();
-
-});
-
-// Delete button function
-$(`#delete`).on("click", function () {
-  let deleteID = prompt("Please enter the ID of the movie you want to delete.");
-  movies.deletingMovie(deleteID);
-  $(".container").html("<p id='image'><img src='https://i.gifer.com/SjyG.gif' alt='loading'></p>");
+const reloadHtml = () => {
+  $(".clean").html("<p id='image'><img src='https://i.gifer.com/SjyG.gif' alt='loading'></p>");
   $('button').toggleClass("hide");
   $('input').toggleClass("hide");
   $('h1').toggleClass("hide");
-  $('h3').toggleClass("hide");
+  $('h3').toggleClass("hide")
+};
+
+const gettingMovies = () => {
+  movies.getMovies().then((movies) => {
+    $('button').toggleClass("hide");
+    $('h1').toggleClass("hide");
+    $('h3').toggleClass("hide");
+    $('input').toggleClass("hide");
+
+    let html = `<div class="row justify-content-center">`;
+
+    movies.forEach(({title, rating, id, img, genre}) => {
+      html += `
+    <div class="col-xs-8 col-sm-6 col-md-3 movies p-0 i-container box">
+        <span>ID: ${id}</span>           
+        <img src="../${img}" alt="img" style="max-width: 100%; height: auto" class="image">
+        <div class="middle">
+        </div>
+    </div>`;
+    });
+
+    $(".clean").html(html + "</div>");
+
+  }).catch((error) => {
+    console.warn('Oh no! Something went wrong.');
+    console.log(error);
+  });
+
+};
+
+gettingMovies();
+
+// Add button functionality
+$("#add").on("click", () => {
+
+  let addTitle = $("#addTitle").val();
+  let addGenre = $("#addGenre").val();
+  let addRating = $("#addRating").val();
+
+  alert(`The movie being added is:\n\nTitle: ${addTitle}\nGenre: ${addGenre}\nRating: ${addRating}`);
+
+  movies.addMovie(addTitle, addRating, addGenre);
+
+  reloadHtml();
   gettingMovies();
-});
+
+}); // end: #add function
+
+// Delete button functionality
+$(`#delete`).on("click", () => {
+
+  let deleteID = prompt("Please enter the ID of the movie you want to delete.");
+
+  movies.deletingMovie(deleteID);
+
+  reloadHtml();
+  gettingMovies();
+
+}); // end: #delete function
+
+// Edit functionality
+$(`#idToEdit`).on("keyup", () => {
+
+  let editID = $("#idToEdit").val();
+
+  console.log(movies.getMovies().then((data) => {
+    console.log(data[editID - 1]);
+
+    $("#addTitle").val(data[editID - 1].title);
+    $("#addGenre").val(data[editID - 1].genre);
+    $("#addRating").val(data[editID - 1].rating);
+
+    let img = data[editID - 1].img;
+
+    $("#edit").on("click", () => {
+      movies.editMovie($("#addTitle").val(), $("#addGenre").val(), $("#addRating").val(), img, editID);
+
+      reloadHtml();
+      gettingMovies();
+
+    });
+  }));
+}); // end: #idToEdit function
+
+
+// }); // end: IIFE
