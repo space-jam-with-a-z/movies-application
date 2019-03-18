@@ -2,150 +2,227 @@
   "movies": [
     {
       "title": "Aladdin",
-      "rating": 5,
-      "genre": "animated",
+      "rating": "Documentary",
+      "genre": "4",
       "id": 1,
       "img": "img/aladdin.jpg"
     },
     {
-      "title": "Antman",
-      "rating": 4,
+      "title": "Antman & Wasp",
+      "rating": "4",
       "genre": "action",
       "id": 2,
       "img": "img/antman.jpg"
     },
     {
       "title": "Aquaman",
-      "rating": 3,
+      "rating": "3",
       "genre": "action",
       "id": 3,
       "img": "img/aquaman.jpg"
     },
     {
       "title": "Avengers",
-      "rating": 2,
+      "rating": "2",
       "genre": "action",
-      "id": 4,
-      "img": "img/avengers.jpg"
+      "img": "img/avengers.jpg",
+      "id": 4
     },
     {
       "title": "Captain Marvel",
-      "rating": 1,
-      "genre": "action",
+      "rating": "action",
+      "genre": "1",
       "id": 5,
       "img": "img/captain_marvel.jpg"
     },
     {
       "title": "Detective Pikachu",
-      "rating": 5,
+      "rating": "5",
       "genre": "thriller",
       "id": 6,
       "img": "img/detective_pikachu.jpg"
     },
     {
-      "title": "Frozen",
-      "rating": 4,
-      "genre": "animated",
-      "id": 7,
-      "img": "img/frozen.jpg"
+      "title": "Frozen II",
+      "rating": "Animated",
+      "genre": "4",
+      "img": "img/frozen.jpg",
+      "id": 7
     },
     {
-      "title": "John Wick",
-      "rating": 3,
-      "genre": "action",
+      "title": "John Wick 3",
+      "rating": "Documentary",
+      "genre": "4",
       "id": 8,
       "img": "img/john_wick.jpg"
     },
     {
       "title": "The Lion King",
-      "rating": 2,
-      "genre": "animated",
+      "rating": "animated",
+      "genre": "2",
       "id": 9,
       "img": "img/lion_king.jpg"
     },
     {
       "title": "Men in Black",
-      "rating": 1,
+      "rating": "1",
       "genre": "action",
       "id": 10,
       "img": "img/men_in_black.jpg"
     },
     {
       "title": "Rocketman",
-      "rating": 4.5,
+      "rating": "5",
       "genre": "documentary",
       "id": 11,
       "img": "img/rocketman.jpg"
     },
     {
       "title": "Shaft",
-      "rating": 3.5,
-      "genre": "documentary",
+      "rating": "Documentary",
+      "genre": "4",
       "id": 12,
       "img": "img/shaft.jpg"
     },
     {
       "title": "Shazam",
-      "rating": 2.5,
+      "rating": "3",
       "genre": "action",
       "id": 13,
       "img": "img/shazam.jpg"
     },
     {
       "title": "Sonic the Hedgehog",
-      "rating": 1.5,
+      "rating": "2",
       "genre": "animated",
       "id": 14,
       "img": "img/sonic.jpg"
     },
     {
       "title": "Spiderman",
-      "rating": 0.5,
+      "rating": "1",
       "genre": "action",
       "id": 15,
       "img": "img/spiderman.jpg"
     },
     {
       "title": "Spiderman: Into the Spiderverse",
-      "rating": 4.5,
+      "rating": "5",
       "genre": "animated",
       "id": 16,
       "img": "img/spiderverse.jpg"
     },
     {
       "title": "They Shall Not Grow Old",
-      "rating": 3.5,
+      "rating": "4",
       "genre": "documentary",
       "id": 17,
       "img": "img/they_shall_not_grow_old.jpg"
     },
     {
       "title": "Tolkein",
-      "rating": 2.5,
+      "rating": "3",
       "genre": "documentary",
       "id": 18,
       "img": "img/tolkein.jpg"
     },
     {
       "title": "Toy Story 4",
-      "rating": 1.5,
+      "rating": "2",
       "genre": "animated",
       "id": 19,
       "img": "img/toystory.jpg"
     },
     {
       "title": "Us",
-      "rating": 0.5,
+      "rating": "1",
       "genre": "thriller",
       "id": 20,
       "img": "img/us.jpg"
     },
     {
-      "title": "asdf",
-      "rating": "asdf",
-      "genre": "asdf",
-      "img": "img/default.jpg",
+      "title": "Annihilation",
+      "rating": "4",
+      "genre": "Thriller",
+      "img": "img/annihilation.jpg",
       "id": 21
+    },
+    {
+      "title": "Apollo 11",
+      "rating": "5",
+      "genre": "Comedy",
+      "img": "img/apollo11.jpg",
+      "id": 22
+    },
+    {
+      "title": "A Quiet Place",
+      "rating": "4",
+      "genre": "Comedy",
+      "id": 23,
+      "img": "img/aQuietPlace.jpg"
+    },
+    {
+      "title": "Black Panther",
+      "rating": "5",
+      "genre": "Sci Fi / Horror",
+      "id": 24,
+      "img": "img/blackPanther.jpg"
+    },
+    {
+      "title": "Bohemian Raphsody",
+      "rating": "4",
+      "genre": "Musical",
+      "img": "img/bohemian.jpg",
+      "id": 25
+    },
+    {
+      "title": "Creed II",
+      "rating": "3",
+      "genre": "Romantic",
+      "img": "img/creed.jpg",
+      "id": 26
+    },
+    {
+      "title": "DeadPool",
+      "rating": "5",
+      "genre": "Dark",
+      "img": "img/deadpool.jpg",
+      "id": 27
+    },
+    {
+      "title": "First Man",
+      "rating": "4",
+      "genre": "Parody",
+      "id": 28,
+      "img": "img/firstMan.jpg"
+    },
+    {
+      "title": "Halloween",
+      "rating": "5",
+      "genre": "Sci Fi / Horror",
+      "id": 29,
+      "img": "img/halloween.jpg"
+    },
+    {
+      "title": "Isle of Dog",
+      "rating": "4",
+      "genre": "Musical",
+      "img": "img/isleOfDog.png",
+      "id": 30
+    },
+    {
+      "title": "Mary, Queen of Scots",
+      "rating": "4",
+      "genre": "BioAutoBiographical",
+      "img": "img/queenOfScots.jpg",
+      "id": 31
+    },
+    {
+      "title": "PacificRim",
+      "rating": "4",
+      "genre": "BioAutoBiographical",
+      "img": "img/pacificRim.jpg",
+      "id": 32
     }
   ]
 }
