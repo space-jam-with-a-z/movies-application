@@ -1,7 +1,7 @@
 // (function() {
 "use strict";
-import movies from './api.js';
 
+import movies from './api.js';
 
 const reloadHtml = () => {
   $(".clean").html("<p id='image'><img src='https://i.gifer.com/SjyG.gif' alt='loading'></p>");
