@@ -139,6 +139,13 @@
       "genre": "thriller",
       "id": 20,
       "img": "img/us.jpg"
+    },
+    {
+      "title": "asdf",
+      "rating": "asdf",
+      "genre": "asdf",
+      "img": "img/default.jpg",
+      "id": 21
     }
   ]
 }

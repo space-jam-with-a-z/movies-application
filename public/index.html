@@ -2,83 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Space Jam with a z Movies Application </title>
+    <title>My Application</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1 class="hide display-3 text-danger">SPACE JAM with a Z</h1>
-        <h3 class="hide display-5 text-danger">MOVIES APP</h3>
-    </header>
 
-    <!-- Modal Divs Begins-->
-    <!--<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
-        <!--<div class="modal-dialog modal-dialog-centered" role="document">-->
-            <!--<div class="modal-content">-->
-                <!--<div class="modal-header">-->
-                    <!--<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>-->
-                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                        <!--<span aria-hidden="true">&times;</span>-->
-                    <!--</button>-->
-                <!--</div>-->
-                <!--<div class="modal-body">-->
-
-    <!-- Modal Body Begins-->
-    <div class="form-group display-none">
+<header class="container col-xs-8">
+    <h1 class="hide fancy">SPACE JAM with a Z</h1>
+    <h3 class="hide sub-fancy mb-3">MOVIES</h3>
+    <div class="form-group">
         <form>
+            <button class="hide btn btn-secondary" id="add">Add</button>
+            <button class="hide btn btn-warning" id="edit">Edit</button>
+            <button class="hide btn btn-danger" id="delete">Delete</button>
 
-            <!-- Input boxes for add button -->
-            <input type="text" id="inputTitle" class="form-control my-3" placeholder="Enter Title...">
-            <input type="text" id="inputGenre" class="form-control my-3" placeholder="Enter Genre...">
-            <input type="file" id="inputImg" class="form-control-file mt-3" name="inputImg">
-
-            <select id="product-select" class="form-control custom-select inject-options my-3"></select>
-
-            <input type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1 - 5" disabled>
-
-            <!-- Add/Delete Buttons -->
-            <button type="button" class="hide btn btn-warning mt-3 mx-1" id="add">ADD</button>
-            <button type="button" class="hide btn btn-danger mt-3 mx-1" id="delete">DELETE</button>
-            <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                <!--<span aria-hidden="true">&times;</span>-->
-            <!--</button>-->
-
-        <!-- Add movie ratings table class -->
-        <div class="form-group movies-table"></div>
+            <input type="text" class="hide form-control idToEdit m-1" id="idToEdit" placeholder="ID...">
+            <input type="text" class="hide form-control m-1" id="addTitle" placeholder="Title...">
+            <input type="text" class="hide form-control m-1" id="addGenre" placeholder="Genre...">
+            <input type="text" class="hide form-control m-1" id="addRating" placeholder="Rating...">
         </form>
-    </div> <!-- End Modal Body -->
-
-                <!--</div>-->
-                <!--<div class="modal-footer">-->
-                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div> &lt;!&ndash; End Modal Divs &ndash;&gt;-->
-
-    <!-- Content imported from container class // Loading image displays until completed -->
-    <div class="inject-movies">
-        <p>
-            <img src="https://i.gifer.com/SjyG.gif" alt="loading">
-        </p>
     </div>
-</div> <!-- End container -->
+</header>
+
+<!-- Inject Movies (.clean) -->
+<div class="container clean">
+    <!-- Loading Image -->
+    <p id="image">
+        <img src="https://i.gifer.com/SjyG.gif" alt="loading">
+    </p>
+    <h4>Loading...</h4>
+</div>
 
 
-
-
-
-
-
-
-<!-- JS Scripts jQuery, popper, bootstrap4, main -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
+<!-- Bootstrap, jQuery, popper, main -->
+<script
+        src="http://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="./main.js"></script>
 </body>
 </html>
