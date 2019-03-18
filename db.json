@@ -218,11 +218,67 @@
       "id": 31
     },
     {
-      "title": "PacificRim",
+      "title": "Pacific Rim",
       "rating": "4",
       "genre": "BioAutoBiographical",
       "img": "img/pacificRim.jpg",
       "id": 32
+    },
+    {
+      "title": "Ready Player One",
+      "rating": "4",
+      "genre": "Drama",
+      "img": "img/readyPlayerOne.jpg",
+      "id": 33
+    },
+    {
+      "title": "Childs Play",
+      "rating": "3",
+      "genre": "Romantic",
+      "img": "img/childsPlay.jpg",
+      "id": 34
+    },
+    {
+      "title": "Game Night",
+      "rating": "5",
+      "genre": "Dark",
+      "img": "img/gameNight.jpg",
+      "id": 35
+    },
+    {
+      "title": "Gotti",
+      "rating": "4",
+      "genre": "Parody",
+      "id": 36,
+      "img": "img/gotti.jpg"
+    },
+    {
+      "title": "Mortal Engines",
+      "rating": "5",
+      "genre": "Sci Fi / Horror",
+      "id": 37,
+      "img": "img/mortalEngines.jpg"
+    },
+    {
+      "title": "Oceans 8",
+      "rating": "4",
+      "genre": "Musical",
+      "img": "img/ocean8.jpg",
+      "id": 38
+    },
+    {
+      "title": "Red Sparrow",
+      "rating": "4",
+      "genre": "BioAutoBiographical",
+      "img": "img/redSparrow.jpg",
+      "id": 39
+    },
+    {
+      "title": "Solo",
+      "rating": "4",
+      "genre": "BioAutoBiographical",
+      "img": "img/solo.jpg",
+      "id": 40
     }
   ]
 }
