@@ -17,13 +17,17 @@
             <button class="hide btn btn-warning" id="edit">Edit</button>
             <button class="hide btn btn-danger" id="delete">Delete</button>
 
-            <input type="text" class="hide form-control idToEdit m-1" id="idToEdit" placeholder="ID...">
-            <input type="text" class="hide form-control m-1" id="addTitle" placeholder="Title...">
-            <input type="text" class="hide form-control m-1" id="addGenre" placeholder="Genre...">
-            <input type="text" class="hide form-control m-1" id="addRating" placeholder="Rating...">
+            <div class="d-flex">
+                <input type="text" class="col-1 hide form-control idToEdit m-1" id="idToEdit" placeholder="ID...">
+                <input type="text" class="col hide form-control m-1" id="addTitle" placeholder="Title...">
+                <input type="text" class="col hide form-control m-1" id="addGenre" placeholder="Genre...">
+                <input type="text" class="col hide form-control m-1" id="addRating" placeholder="Rating...">
+            </div>
         </form>
     </div>
 </header>
+
+<!-- Inject Movies (.clean) -->
 <div class="container clean">
     <!-- Loading Image -->
     <p id="image">
@@ -31,8 +35,6 @@
     </p>
     <h4>Loading...</h4>
 </div>
-
-<!-- Inject Movies (.clean) -->
 
 
 <!-- Bootstrap, jQuery, popper, main -->

@@ -75,6 +75,7 @@ html, body {
 
 .i-container:hover .image {
     opacity: 0.5;
+    border: 4px solid black;
 }
 
 .i-container:hover .middle {
@@ -130,3 +131,4 @@ html, body {
 .box {
     margin-top: 3em;
 }
+

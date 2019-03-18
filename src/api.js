@@ -31,14 +31,14 @@ const deletingMovie = id => {
 };
 
 const editMovie = (title, rating, genre, img, id) => {
-  const edittedMovie = {title: title, rating: rating, genre: genre, img: img};
+  const editedMovie = {title: title, rating: rating, genre: genre, img: img};
   const url = '/api/movies';
   const options = {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(edittedMovie),
+    body: JSON.stringify(editedMovie),
   };
 
   fetch(url + "/" + id, options)
